@@ -1,0 +1,416 @@
+.app {
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  gap: 16px;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #f1f3f5;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffffe8;
+  font-size: 15px;
+  background: none;
+  cursor: pointer;
+
+  &:hover {
+    color: #3882f6;
+  }
+}
+
+.navbar {
+  width: 100%;
+  height: 80px;
+  padding: 8px;
+  background-color: #1f2937;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 8px;
+}
+
+.nav__icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 8px;
+}
+
+.nav__logo {
+  color: #fff;
+  cursor: pointer;
+}
+
+button {
+  color: white;
+  background-color: #1f2937;
+  border: 1px solid #ffffffe8;
+  width: 120px;
+  height: 30px;
+  text-align: center;
+  padding: 4px;
+  font-size: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+
+  &:hover {
+    border-color: #3882f6;
+  }
+}
+
+.login {
+  position: relative;
+  max-width: 80%;
+  display: flex;
+  margin: 20px auto;
+}
+
+.login img {
+  border-radius: 10px;
+}
+
+.formContainer {
+  border-right: 1px solid #fff;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45%;
+  height: 100%;
+  background-color: #fff; /* overlay */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login form {
+  width: 85%;
+  height: 95%;
+  padding: 20px;
+  border-radius: 5px;
+  color: #1f2937;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.login input {
+  width: 100%;
+  height: 50px;
+  border: 1px solid #f1f3f5;
+  margin-bottom: 10px;
+  padding: 8px;
+
+  &::placeholder {
+    padding: 8px;
+  }
+}
+
+.loginForm__action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.forgot {
+  cursor: pointer;
+}
+
+.form__bottomtxt {
+  margin-top: 80px;
+}
+
+.signUp {
+  color: #3882f6;
+  cursor: pointer;
+}
+
+.hero {
+  position: relative;
+}
+
+.header__card {
+  width: 480px;
+  height: 180px;
+  border: 0.5px ridge #f1f3f5;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.9);
+  text-align: left;
+  padding: 20px;
+  position: absolute;
+  top: 12%;
+  left: 2%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.header__card h1 {
+  text-wrap: nowrap;
+}
+
+.header__card p {
+  font-size: 17px;
+}
+
+.slick-prev {
+  z-index: 2;
+  margin-left: 30px;
+}
+
+.slick-next {
+  margin-right: 30px;
+}
+
+.slick-prev::before,
+.slick-next::before {
+  font-size: 35px !important;
+  opacity: 0.8 !important;
+  position: absolute !important;
+  margin-top: -110px;
+  padding: 10px;
+}
+
+.slick-next::before {
+  right: 50%;
+}
+
+.story__link {
+  color: #3882f6;
+  cursor: pointer;
+}
+
+.story {
+  color: #1f2937;
+  max-width: 100%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 25px;
+}
+
+.card__wrapper {
+  width: 95%;
+  height: 90%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.card {
+  border: 1px solid #fff;
+  box-shadow: #000;
+  width: 350px;
+  height: 300px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.more {
+  max-width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  background-color: rgba(31, 41, 55, 0.868);
+}
+
+.more {
+  color: #fff;
+}
+
+.more__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.cta {
+  max-width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+}
+
+.cta button {
+  width: 180px;
+  height: 40px;
+  font-size: 17px;
+
+  &:hover {
+    background-color: #fff;
+    border-color: #1f2937;
+
+    color: #000;
+  }
+}
+
+.features div {
+  color: #1f2937;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.features p {
+  font-size: 18px;
+}
+
+.footer {
+  background-color: #1f2937;
+  color: #fff;
+  max-width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+}
+
+.footer__middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact__links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer small {
+  font-size: 12px;
+}
+
+.thanks {
+  text-align: left;
+  cursor: pointer;
+}
+
+.copyright small {
+  cursor: pointer;
+}
+
+/* Blog */
+
+.blog__header,
+.resources__header {
+  max-width: 800px;
+  height: 180px;
+  border: transparent;
+  background-color: rgb(255, 255, 255, 0.9);
+  box-shadow: rgba(0, 0, 0, 0.9);
+  padding: 20px;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+
+.blog__cta,
+.resources__cta {
+  padding: 20px;
+  position: absolute;
+  top: 53%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.blog__cta {
+  left: 40%;
+  border: transparent;
+  background-color: rgb(31, 41, 55, 0.2);
+  color: #fff;
+  max-width: 800px;
+  height: 90px;
+}
+
+.resources__cta {
+  left: 38%;
+  max-width: 800px;
+  height: 180px;
+}
+
+.cta__buttons {
+  font-size: 17px;
+  display: flex;
+  gap: 8px;
+}
+
+.cta__buttons button:hover {
+  background-color: #fff;
+  border-color: #1f2937;
+
+  color: #000;
+}
+
+.notFound h1 {
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
