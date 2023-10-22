@@ -12,10 +12,17 @@ const Navbar = () => {
         <Link to="https://x.com/roselinemo_" target="_blank">
           <h2 className="nav__logo">RoselineMo</h2>
         </Link>
-
         <Link to="/">Home</Link>
         <Link to="/blog">Blog</Link>
         <Link to="/resources">Resources</Link>
+
+        <ErrorBoundary>
+          <NavButton
+            label="404-Tester"
+            path="/notfound"
+            className="login__button"
+          />
+        </ErrorBoundary>
 
         <ErrorBoundary>
           <ErrorComponent />
@@ -34,11 +41,9 @@ const Navbar = () => {
           <icon.GitHub size={20} />
         </Link>
 
-        <NavButton label="Login" path="/login" className="login__button" />
-
-        {/* <Link>
-            <icon.Moon fill="white" />
-          </Link> */}
+        <ErrorBoundary>
+          <NavButton label="Login" path="/login" className="login__button" />
+        </ErrorBoundary>
       </div>
     </nav>
   );

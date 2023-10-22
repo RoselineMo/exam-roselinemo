@@ -18,7 +18,6 @@ const App = () => {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
 
             <Route
               path="/blog"
@@ -34,6 +33,15 @@ const App = () => {
               element={
                 <ErrorBoundary>
                   <Resources />
+                </ErrorBoundary>
+              }
+            />
+
+            <Route
+              path="/login"
+              element={
+                <ErrorBoundary>
+                  <Login />
                 </ErrorBoundary>
               }
             />
