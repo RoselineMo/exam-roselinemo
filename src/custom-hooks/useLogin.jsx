@@ -1,6 +1,5 @@
 import {useState, useEffect} from "react";
 import useFakeAuth from "./useFakeAuth";
-import ErrorBoundary from "../components/ErrorBoundary";
 
 const useLogin = () => {
   const [username, setUsername] = useState("");

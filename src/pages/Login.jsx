@@ -12,7 +12,6 @@ const Login = () => {
     error,
     setError,
     handleLogin,
-    loggedIn,
   } = useFakeAuth();
 
   const handleTryAgain = () => {
@@ -61,12 +60,13 @@ const Login = () => {
                 </button>
               </>
             )}
-            {!loggedIn && <button>Login Required</button>}
 
             <div className="loginForm__action">
               <small className="forgot">Forgot password?</small>
               <div className="loginForm__button">
-                <button type="submit">Login</button>
+                <button type="submit" onClick={handleLogin}>
+                  Login
+                </button>
               </div>
             </div>
 
