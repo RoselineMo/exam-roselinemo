@@ -8,7 +8,6 @@ import Login from "./pages/Login";
 import Blog from "./pages/Blog";
 import NotFound from "./components/NotFound";
 import Resources from "./pages/Resources";
-import ErrorComponent from "./components/ErrorComponent";
 
 const App = () => {
   return (

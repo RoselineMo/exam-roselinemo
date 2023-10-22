@@ -39,7 +39,7 @@ const Login = () => {
             value={username}
             required
             minLength={2}
-            maxLength={20}
+            maxLength={10}
             onChange={(event) => setUsername(event.target.value)}
           />
           <input
