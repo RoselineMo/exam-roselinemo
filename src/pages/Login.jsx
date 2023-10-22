@@ -1,12 +1,18 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import useFakeAuth from "../custom-hooks/useFakeAuth";
-import NavButton from "../components/NavButton";
-import TopButton from "../components/TopButton";
-import Resources from "./Resources";
 
 const Login = () => {
-  const {loggedIn, login, logout} = useFakeAuth();
+  const {
+    username,
+    setUsername,
+    password,
+    setPassword,
+    error,
+    setError,
+    handleLogin,
+    loggedIn,
+  } = useFakeAuth();
 
   const handleTryAgain = () => {
     setUsername("");
@@ -21,7 +27,7 @@ const Login = () => {
         alt="login"
       />
       <div className="formContainer">
-        <form onSubmit={login}>
+        <form onSubmit={handleLogin}>
           <h1>Welcome!</h1>
           <p>Login to access amazing resources.</p>
           <input
@@ -29,8 +35,22 @@ const Login = () => {
             placeholder="Username"
             name="username"
             autoComplete="on"
+            value={username}
+            required
+            minLength={2}
+            maxLength={20}
+            onChange={(event) => setUsername(event.target.value)}
           />
-          <input type="password" placeholder="Password" name="password" />
+          <input
+            type="password"
+            placeholder="Password"
+            name="password"
+            value={password}
+            required
+            minLength={6}
+            maxLength={20}
+            onChange={(event) => setPassword(event.target.value)}
+          />
           {error && (
             <>
               <p style={{color: "red", fontSize: "13px"}}>{error}</p>
@@ -39,7 +59,8 @@ const Login = () => {
               </button>
             </>
           )}
-          {loggedIn && <Link to="/resources">{<Resources />}</Link>}
+          {!loggedIn && <button>Login Required</button>}
+
           <div className="loginForm__action">
             <small className="forgot">Forgot password?</small>
             <div className="loginForm__button">

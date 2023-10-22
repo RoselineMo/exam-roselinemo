@@ -16,15 +16,6 @@ const Blog = () => {
         <p>Let me tell you a story</p>
         <NavButton label="Preview" path="/preview" />
       </div>
-
-      <div className="blog__cta">
-        <p>Login to explore more exciting content</p>
-
-        <div className="cta__buttons">
-          <NavButton label="Login" path="/login" />
-          <NavButton label="Back to home" path="/" />
-        </div>
-      </div>
     </div>
   );
 };

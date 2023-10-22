@@ -1,10 +1,8 @@
 import React from "react";
-import useFakeAuth from "../custom-hooks/useFakeAuth";
+
 import NavButton from "../components/NavButton";
 
 const Resources = () => {
-  const {loggedIn} = useFakeAuth();
-
   return (
     <div className="resources">
       <img
@@ -16,21 +14,13 @@ const Resources = () => {
         <h1>Welcome to the amazing Resources Page!</h1>
       </div>
 
-      <div>
-        {loggedIn() ? (
-          <div>
-            <Resources />
-          </div>
-        ) : (
-          <div className="resources__cta">
-            <p>You must be logged in to access the resources.</p>
+      <div className="resources__cta">
+        <p>You must be logged in to access the resources.</p>
 
-            <div className="cta__buttons">
-              <NavButton label="Login" path="/login" />
-              <NavButton label="Back to home" path="/" />
-            </div>
-          </div>
-        )}
+        <div className="cta__buttons">
+          <NavButton label="Login" path="/login" />
+          <NavButton label="Back to home" path="/" />
+        </div>
       </div>
     </div>
   );
