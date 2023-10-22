@@ -1,7 +1,7 @@
 import React from "react";
-import ErrorBoundary from "../components/ErrorBoundary";
 import {Link} from "react-router-dom";
-import useFakeAuth from "../custom-hooks/useFakeAuth";
+import useLogin from "../custom-hooks/useLogin";
+import NavButton from "../components/NavButton";
 
 const Login = () => {
   const {
@@ -12,7 +12,8 @@ const Login = () => {
     error,
     setError,
     handleLogin,
-  } = useFakeAuth();
+    isLoggedIn,
+  } = useLogin();
 
   const handleTryAgain = () => {
     setUsername("");
@@ -27,59 +28,81 @@ const Login = () => {
         alt="login"
       />
       <div className="formContainer">
-        <ErrorBoundary>
-          <form onSubmit={handleLogin}>
-            <h1>Welcome!</h1>
-            <p>Login to access amazing resources.</p>
-            <input
-              type="text"
-              placeholder="Username"
-              name="username"
-              autoComplete="on"
-              value={username}
-              required
-              minLength={2}
-              maxLength={20}
-              onChange={(event) => setUsername(event.target.value)}
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              name="password"
-              value={password}
-              required
-              minLength={6}
-              maxLength={20}
-              onChange={(event) => setPassword(event.target.value)}
-            />
-            {error && (
-              <>
-                <p style={{color: "red", fontSize: "13px"}}>{error}</p>
-                <button type="reset" onClick={handleTryAgain}>
-                  Try again
-                </button>
-              </>
-            )}
+        <form onSubmit={handleLogin}>
+          <h1>Welcome!</h1>
+          <p>Login to access amazing resources.</p>
+          <input
+            type="text"
+            placeholder="Username"
+            name="username"
+            autoComplete="on"
+            value={username}
+            required
+            minLength={2}
+            maxLength={20}
+            onChange={(event) => setUsername(event.target.value)}
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            name="password"
+            value={password}
+            required
+            minLength={6}
+            maxLength={20}
+            onChange={(event) => setPassword(event.target.value)}
+          />
 
-            <div className="loginForm__action">
-              <small className="forgot">Forgot password?</small>
-              <div className="loginForm__button">
-                <button type="submit" onClick={handleLogin}>
-                  Login
-                </button>
+          <div className="loginForm__action">
+            <small className="forgot">Forgot password?</small>
+            <div className="loginForm__button">
+              <button type="submit">Login</button>
+            </div>
+          </div>
+
+          <div className="form__bottomtxt">
+            <small>
+              Don't have an account?{" "}
+              <Link>
+                <span className="signUp">Sign up now.</span>
+              </Link>
+            </small>
+          </div>
+          {error && (
+            <>
+              <p style={{color: "red", fontSize: "13px"}}>{error}</p>
+              <button type="reset" onClick={handleTryAgain}>
+                Try again
+              </button>
+
+              <div className="loginForm__action">
+                <small className="forgot">Forgot password?</small>
+                <div className="loginForm__button">
+                  <button type="submit">Login</button>
+                </div>
               </div>
-            </div>
 
-            <div className="form__bottomtxt">
-              <small>
-                Don't have an account?{" "}
-                <Link>
-                  <span className="signUp">Sign up now.</span>
-                </Link>
-              </small>
-            </div>
-          </form>
-        </ErrorBoundary>
+              <div className="form__bottomtxt">
+                <small>
+                  Don't have an account?{" "}
+                  <Link>
+                    <span className="signUp">Sign up now.</span>
+                  </Link>
+                </small>
+              </div>
+            </>
+          )}
+          {isLoggedIn() && (
+            <>
+              <h3>Welcome, {username} 👋</h3>
+              <div className="loginSuccess">
+                <p style={{color: "green"}}>Login Success!</p>
+
+                <NavButton label="Back to Home" path="/" />
+              </div>
+            </>
+          )}
+        </form>
       </div>
     </div>
   );

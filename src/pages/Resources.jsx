@@ -12,15 +12,8 @@ const Resources = () => {
 
       <div className="resources__header">
         <h1>Welcome to the amazing Resources Page!</h1>
-      </div>
-
-      <div className="resources__cta">
-        <p>You must be logged in to access the resources.</p>
-
-        <div className="cta__buttons">
-          <NavButton label="Login" path="/login" />
-          <NavButton label="Back to home" path="/" />
-        </div>
+        <p>Coming soon. Stay tuned.</p>
+        <NavButton label="Back to home" path="/" />
       </div>
     </div>
   );

@@ -1,23 +1,29 @@
-import {useState, useEffect} from "react";
-import useFakeAuth from "./useFakeAuth";
+import {useState} from "react";
 
 const useLogin = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const {loggedIn, login, logout} = useFakeAuth();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      login();
+      const response = {
+        setUsername,
+        setPassword,
+      };
+
+      const data = response.data;
+
+      setIsAuthenticated(true);
     } catch (error) {
       setError("Invalid username or password. Please try again.");
     }
   };
 
   const isLoggedIn = () => {
-    return loggedIn;
+    return isAuthenticated;
   };
 
   return {
